@@ -136,7 +136,6 @@ export default function DevarshPortfolio() {
         </p>
         <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
           <a className="dv-btn solid" href="#about">My Story <ArrowRight size={15} /></a>
-          {/*   <a className="dv-btn" href="#" onClick={(e) => e.preventDefault()}>Download Resume <ArrowUpRight size={15} /></a>*/}
         </div>
 
         <hr className="dv-hr" style={{ margin: "32px 0 20px" }} />
