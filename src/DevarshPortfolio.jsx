@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { Mail, Phone, ArrowRight } from "lucide-react";
+import { Mail, Phone, ArrowRight, ArrowUpRight } from "lucide-react";
 
 const styles = `
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 .dv-root {
-  --bg: #FFFFFF;
-  --panel: #F5F7FA;
-  --ink: #1B1F24;
-  --muted: #5C6470;
-  --line: #E2E6EB;
-  --accent: #1E4FA3;
-  --accent-soft: #E9F0FB;
+  --bg: #EEF4FB;
+  --panel: #D9E6F2;
+  --ink: #10233F;
+  --muted: #4A6180;
+  --line: #CBDCEB;
+  --accent: #123974;
+  --accent-soft: #D4E2F2;
   background: var(--bg);
   color: var(--ink);
   font-family: 'Inter', sans-serif;
@@ -38,9 +38,11 @@ const styles = `
 }
 
 .dv-btn {
-  font-size: 14px;
-  font-weight: 500;
-  padding: 13px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 15px 28px;
   border: 1px solid var(--ink);
   color: var(--ink);
   background: transparent;
@@ -49,12 +51,12 @@ const styles = `
   gap: 8px;
   cursor: pointer;
   text-decoration: none;
-  border-radius: 2px;
+  border-radius: 999px;
   transition: background 0.2s, color 0.2s;
 }
 .dv-btn:hover { background: var(--ink); color: var(--bg); }
 .dv-btn.solid { background: var(--accent); color: #fff; border-color: var(--accent); }
-.dv-btn.solid:hover { background: #1a332d; }
+.dv-btn.solid:hover { background: #0c2751; }
 
 .dv-tag {
   font-size: 12px;
@@ -90,6 +92,21 @@ const styles = `
 
 .dv-hr { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
 
+.dv-gradient-text {
+  background: linear-gradient(90deg, #6E93C4, #123974, #6E93C4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: dv-gradient-move 6s ease-in-out infinite alternate;
+}
+
+@keyframes dv-gradient-move {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
 .dv-top-link {
   color: var(--accent);
   text-decoration: none;
@@ -120,22 +137,30 @@ export default function DevarshPortfolio() {
 
       {/* HERO */}
       <section className="dv-section" style={{ paddingTop: 56, paddingBottom: 44 }}>
-        <span className="dv-eyebrow">Devarsh Shah — The Backend Builder</span>
-        <h1 className="dv-serif" style={{ fontSize: "clamp(38px, 5.4vw, 68px)", fontWeight: 500, lineHeight: 1.1, margin: "0 0 14px", maxWidth: 780 }}>
-          Code in Production
+        <h1 style={{ fontFamily: "'Inter', sans-serif", fontSize: "clamp(30px, 4.4vw, 48px)", fontWeight: 800, letterSpacing: "0.01em", margin: "0 0 8px", color: "var(--ink)" }}>
+          DEVARSH SHAH
         </h1>
-        <p className="dv-mono" style={{ fontSize: 14, color: "var(--accent)", letterSpacing: "0.04em", marginBottom: 20 }}>
-          Java · Spring Boot · REST APIs · Cloud
+        <p className="dv-mono" style={{ fontSize: 13, color: "var(--accent)", letterSpacing: "0.18em", marginBottom: 28 }}>
+          THE BACKEND BUILDER
         </p>
-        <p style={{ fontSize: 17, fontStyle: "italic", color: "var(--muted)", marginBottom: 20 }}>
+
+        <h2 className="dv-gradient-text" style={{ fontFamily: "'Inter', sans-serif", fontSize: "clamp(34px, 4.6vw, 58px)", fontWeight: 800, lineHeight: 1.08, margin: "0 0 20px", maxWidth: 700 }}>
+          CODE IN PRODUCTION
+        </h2>
+
+        <p className="dv-mono" style={{ fontSize: 14, color: "var(--ink)", letterSpacing: "0.04em", marginBottom: 20 }}>
+          JAVA &nbsp;·&nbsp; SPRING BOOT &nbsp;·&nbsp; REST APIS &nbsp;·&nbsp; CLOUD
+        </p>
+        <p style={{ fontSize: 17, fontStyle: "italic", color: "var(--accent)", marginBottom: 20 }}>
           Yes, that Production. No, not the "it works on my machine" kind.
         </p>
         <p style={{ fontSize: 18, color: "var(--muted)", maxWidth: 560, lineHeight: 1.65, marginBottom: 36 }}>
           I turn business requirements into scalable systems. Tabs full of Postman collections,
-          SQL queries, and AWS consoles. I don't just write code — I architect it to last.
+          SQL queries, and AWS consoles. I don't just write code — <span style={{ fontStyle: "italic", color: "var(--accent)" }}>I architect it to last.</span>
         </p>
         <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
           <a className="dv-btn solid" href="#about">My Story <ArrowRight size={15} /></a>
+          <a className="dv-btn" href="/Devarsh's_Resume.pdf" download>Download Resume <ArrowUpRight size={15} /></a>
         </div>
 
         <hr className="dv-hr" style={{ margin: "32px 0 20px" }} />
@@ -273,17 +298,18 @@ export default function DevarshPortfolio() {
       </section>
 
       {/* CONTACT */}
-      <section className="dv-section" id="contact">
+      <section className="dv-section" id="contact" style={{ textAlign: "center" }}>
         <span className="dv-eyebrow">Contact</span>
-        <h2 className="dv-serif" style={{ fontSize: "clamp(28px, 3.6vw, 40px)", fontWeight: 500, margin: "0 0 14px", maxWidth: 620 }}>
+        <h2 className="dv-serif" style={{ fontSize: "clamp(22px, 3.2vw, 40px)", fontWeight: 500, margin: "0 auto 14px", maxWidth: 900, whiteSpace: "nowrap" }}>
           The next system I build could be yours.
         </h2>
-        <p style={{ color: "var(--muted)", fontSize: 16, maxWidth: 540, marginBottom: 40 }}>
-          Hiring? Have a backend problem nobody's solved yet? A "this API might be tricky,
-          but..." idea? Those are my favorite. The form below works.
+        <p style={{ color: "var(--muted)", fontSize: 16, maxWidth: 620, margin: "0 auto 40px" }}>
+          Hiring? Looking for a Software Engineer? Or just want to connect?
+          <br />
+          Those are my favorite. The form below works.
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 640 }} className="dv-grid2">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 640, margin: "0 auto", textAlign: "left" }} className="dv-grid2">
           <input className="dv-input" placeholder="Who are you?" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
           <input className="dv-input" placeholder="Where do I reply?" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
           <textarea
@@ -296,14 +322,17 @@ export default function DevarshPortfolio() {
           />
         </div>
 
-        <a className="dv-btn solid" href={mailtoHref} style={{ marginTop: 24 }}>Send It <ArrowRight size={15} /></a>
+        <div style={{ textAlign: "left", maxWidth: 640, margin: "0 auto" }}>
+          <a className="dv-btn solid" href={mailtoHref} style={{ marginTop: 24 }}>Send It <ArrowRight size={15} /></a>
+        </div>
 
         <hr className="dv-hr" />
-        <div style={{ marginTop: 20 }}>
+
+<div style={{ marginBottom: 20 }}>
           <a href="#top" className="dv-top-link">Back to the cover ↑</a>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16, fontSize: 14, color: "var(--muted)" }}>
-          <div style={{ display: "flex", gap: 22, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", gap: 16, fontSize: 14, color: "var(--muted)" }}>
+          <div style={{ display: "flex", gap: 22, flexWrap: "wrap", justifyContent: "center" }}>
             <span style={{ display: "flex", alignItems: "center", gap: 6 }}><Mail size={14} /> devarshah48@gmail.com</span>
             <span style={{ display: "flex", alignItems: "center", gap: 6 }}><Phone size={14} /> 7984322552</span>
             <a href="https://devarsh1029.github.io" style={{ color: "inherit", display: "flex", alignItems: "center", gap: 6, textDecoration: "none" }}><Mail size={14} /> devarsh1029.github.io</a>
@@ -311,6 +340,8 @@ export default function DevarshPortfolio() {
           </div>
           <span>Devarsh Shah · Backend · Cloud · Systems &nbsp;|&nbsp; © 2026 Devarsh Shah. All rights reserved.</span>
         </div>
+
+        
       </section>
     </div>
   );
