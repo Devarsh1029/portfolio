@@ -56,26 +56,26 @@ function BulletGrid({ items }) {
   );
 }
 
-function LayerDiagram({ layers }) {
-  return (
-    <div className="mc-layer-stack">
-      {layers.map((layer, i) => (
-        <React.Fragment key={layer.name}>
-          <div className="mc-layer-card">
-            <h4>{layer.name}</h4>
-            <p>{layer.desc}</p>
-          </div>
+// function LayerDiagram({ layers }) {
+//   return (
+//     <div className="mc-layer-stack">
+//       {layers.map((layer, i) => (
+//         <React.Fragment key={layer.name}>
+//           <div className="mc-layer-card">
+//             <h4>{layer.name}</h4>
+//             <p>{layer.desc}</p>
+//           </div>
 
-          {i < layers.length - 1 && (
-            <div className="mc-layer-arrow">
-              <ArrowDown size={14} />
-            </div>
-          )}
-        </React.Fragment>
-      ))}
-    </div>
-  );
-}
+//           {i < layers.length - 1 && (
+//             <div className="mc-layer-arrow">
+//               <ArrowDown size={14} />
+//             </div>
+//           )}
+//         </React.Fragment>
+//       ))}
+//     </div>
+//   );
+// }
 
 function CodeBlock({ code, lang = "java" }) {
   return (
