@@ -1,18 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  Mail, Phone, ExternalLink, ArrowDown, Clock,
+  Mail, Phone, ExternalLink, ArrowDown,
   FileDown, Star, Send, MapPin, ArrowUpRight, Menu, X,
 } from "lucide-react";
 
 /* lucide-react dropped brand/logo icons (Github, Linkedin, ...) from recent
    versions, so these are plain inline SVGs instead of a lucide import. */
-function Github({ size = 16, style, className }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" style={style} className={className} aria-hidden="true">
-      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.07.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
-    </svg>
-  );
-}
+// function Github({ size = 16, style, className }) {
+//   return (
+//     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" style={style} className={className} aria-hidden="true">
+//       <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.07.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+//     </svg>
+//   );
+// }
 function Linkedin({ size = 16, style, className }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" style={style} className={className} aria-hidden="true">
@@ -593,7 +593,7 @@ function Skills() {
         ))}
       </div>
       <div className="mc-reveal mc-mono" style={{ marginTop: 36, display: "flex", flexWrap: "wrap", gap: "6px 24px", fontSize: 12, color: "var(--s500)" }}>
-        <span style={{ color: "var(--s600)" }}>// also fluent in</span>
+        <span style={{ color: "var(--s600)" }}>{"// also fluent in"}</span>
         <span>REST / GraphQL</span><span style={{ color: "var(--s700)" }}>·</span>
         <span>CI/CD</span><span style={{ color: "var(--s700)" }}>·</span>
         <span>System Design</span><span style={{ color: "var(--s700)" }}>·</span>
